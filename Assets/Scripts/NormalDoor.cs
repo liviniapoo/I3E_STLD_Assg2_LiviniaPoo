@@ -2,7 +2,7 @@
  * Author: Livinia Poo
  * Date: 24/06/2024
  * Description: 
- * Opening Ship Doors using Time and Lerp
+ * Opening Individual Ship Doors using Time and Lerp
  */
 
 using System.Collections;
@@ -11,42 +11,70 @@ using UnityEngine;
 
 public class NormalDoor : MonoBehaviour
 {
-    public float openDuration;
+    public float moveDuration;
     float currentDuration;
     bool opening = false;
-    bool opened = false;
+    public bool opened = false;
+    bool closing = false;
 
-    Vector3 startPosition;
-    Vector3 targetPosition;
+    [SerializeField]
+    private Vector3 moveVector;
+    private Vector3 targetPosition;
+    private Vector3 startPosition;
 
     public void OpenShipDoor()
     {
         if (!opening && !opened)
         {
             startPosition = transform.position;
-            targetPosition = startPosition;
-            targetPosition.x += 90f;
+            targetPosition = transform.position + moveVector;
 
             opening = true;
+            closing = false;
+
+            currentDuration = 0;
         }
     }
+
+    public void CloseShipDoor()
+    {
+        if (opened && !closing)
+        {
+            startPosition = transform.position;
+            targetPosition = transform.position - moveVector;
+
+            closing = true;
+            opening = false; 
+
+            currentDuration = 0;
+        }
+    }
+
 
     private void Update()
     {
-        if (opening)
+        if (opening || closing)
         {
             currentDuration += Time.deltaTime;
-            float t = currentDuration / openDuration;
+            float t = currentDuration / moveDuration;
             transform.position = Vector3.Lerp(startPosition, targetPosition, t);
 
-            if (currentDuration >= openDuration)
+            if (currentDuration >= moveDuration)
             {
-                opening = false;
                 transform.position = targetPosition;
-                opened = true;
-                Debug.Log("Door opened");
+                if (opening)
+                {
+                    opening = false;
+                    opened = true;
+                    Debug.Log("Door opened");
+                }
+                else if (closing)
+                {
+                    closing = false;
+                    opened = false;
+                    Debug.Log("Door closed");
+                }
             }
         }
     }
-
 }

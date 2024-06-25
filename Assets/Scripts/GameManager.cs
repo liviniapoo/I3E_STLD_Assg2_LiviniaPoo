@@ -1,18 +1,29 @@
+/*
+ * Author: Livinia Poo
+ * Date: 25/06/2024
+ * Description: 
+ * Keeping player values and progress through scenes
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static GameManager instance;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            }
+            else if(instance != null && instance != this)
+        {
+            Destroy(gameObject);
+        }
         
     }
 }

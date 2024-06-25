@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorButton : MonoBehaviour
+public class DoorButton : Interactable
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private GameObject door;
+    [SerializeField]
+    private GameObject doorPanel;
+    private bool opened = false;
+    public override void Interact()
     {
-        
-    }
+        Debug.Log("called");
+        if (!opened)
+        {
+            door.GetComponent<doorController>().openDoor();
+            opened = true;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }else if (opened)
+        {
+            door.GetComponent<doorController>().closeDoor();
+            opened = false;
+
+        }
+
     }
 }
