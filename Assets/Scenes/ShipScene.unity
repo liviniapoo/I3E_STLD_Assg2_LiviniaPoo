@@ -144,7 +144,7 @@ PrefabInstance:
     - target: {fileID: 937451010987979973, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.2
+      value: -31.01
       objectReference: {fileID: 0}
     - target: {fileID: 2862278905927072855, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
         type: 3}
@@ -159,7 +159,7 @@ PrefabInstance:
     - target: {fileID: 2862278905927072855, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.2
+      value: -31.01
       objectReference: {fileID: 0}
     - target: {fileID: 5126527961139664760, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
         type: 3}
@@ -174,7 +174,7 @@ PrefabInstance:
     - target: {fileID: 5126527961139664760, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.2
+      value: -31.01
       objectReference: {fileID: 0}
     - target: {fileID: 5126527961139664767, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
         type: 3}
@@ -1044,10 +1044,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 046841df4d3d11148a3fd7b87f6c2051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHealth: 100
   hasGun: 0
   ammoBoxCount: 0
   ammoCount: 0
   medkitCount: 0
+  healthRestoredPerHeal: 20
 --- !u!54 &353392902
 Rigidbody:
   m_ObjectHideFlags: 0

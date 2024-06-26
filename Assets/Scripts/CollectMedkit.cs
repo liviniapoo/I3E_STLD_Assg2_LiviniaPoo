@@ -1,3 +1,10 @@
+/*
+ * Author: Livinia Poo
+ * Date: 24/06/2024
+ * Description: 
+ * Destroys medkit asset upon collection
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

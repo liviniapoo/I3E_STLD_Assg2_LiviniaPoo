@@ -12,9 +12,17 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    /*Health Handling*/
+    [SerializeField]
+    public int playerHealth = 100;
+
     /*Door Handling*/
     private NormalDoor normalDoor;
 
+    /// <summary>
+    /// Function to check door in front of player
+    /// </summary>
+    /// <param name="doorPos"></param>
     public void DoorUpdate(NormalDoor doorPos)
     {
         normalDoor = doorPos;
@@ -60,6 +68,7 @@ public class Player : MonoBehaviour
     /// Variable to check how many medkits player has
     /// </summary>
     public int medkitCount = 0;
+    public int healthRestoredPerHeal = 20;
 
     private CollectMedkit medkitFront;
 
@@ -91,7 +100,7 @@ public class Player : MonoBehaviour
         if (ammoFront != null)
         {
             ammoFront.AmmoCollect();
-            ammoCount += 25;
+            ammoCount += 15;
             ammoBoxCount += 1;
 
             Debug.Log(ammoCount);
@@ -111,5 +120,17 @@ public class Player : MonoBehaviour
             normalDoor.OpenShipDoor();
         }
     }
-
+    private void OnHeal()
+    {
+        if (playerHealth < 100 && medkitCount > 0)
+        {
+            playerHealth += healthRestoredPerHeal;
+            medkitCount -= 1;
+            Debug.Log(playerHealth);
+        }
+        else if (medkitCount == 0)
+        {
+            Debug.Log("No more medkits!");
+        }
+    }
 }
