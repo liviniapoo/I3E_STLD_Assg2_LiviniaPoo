@@ -140,6 +140,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1127559436565044040}
+  - {fileID: 6651767151823346339}
   m_Father: {fileID: 1127559436565044034}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1127559436565399330
@@ -400,7 +401,6 @@ Transform:
   m_Children:
   - {fileID: 1127559436565044078}
   - {fileID: 1127559436565044014}
-  - {fileID: 6651767151823346339}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!95 &1127559436556022926
@@ -1247,12 +1247,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4803942418970377907}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.17453198, y: 0.63740075, z: -0.73508894, w: 0.15133783}
-  m_LocalPosition: {x: 0.441, y: 1.12, z: -0.18}
-  m_LocalScale: {x: 1.3038388, y: 1.3038388, z: 1.3038388}
+  m_LocalRotation: {x: -0.52705, y: -0.47816524, z: 0.46383923, w: 0.5276642}
+  m_LocalPosition: {x: -0.12681621, y: 0.030740928, z: -0.20713496}
+  m_LocalScale: {x: 1.303838, y: 1.3038387, z: 1.3038387}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1127559436565044048}
+  m_Father: {fileID: 1127559436565044032}
   m_LocalEulerAnglesHint: {x: 98.142, y: 153.287, z: 0}
 --- !u!114 &8295814488535568772
 MonoBehaviour:
@@ -1267,4 +1267,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponLength: 0.95
-  weaponDamage: 0
+  weaponDamage: 10

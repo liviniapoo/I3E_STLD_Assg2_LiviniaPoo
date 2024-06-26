@@ -32,11 +32,18 @@ public class EnemyDamageDealer : MonoBehaviour
         {
             RaycastHit hit;
 
-            int layerMask = 1 << 9;
+            int layerMask = 1 << 8;
             if(Physics.Raycast(transform.position, -transform.up, out hit, weaponLength, layerMask))
             {
-                Debug.Log("Enemy dealt damage");
-                hasDealtDamage = true;
+                /*print("Enemy dealt damage");
+                hasDealtDamage = true;*/
+
+                if (hit.transform.TryGetComponent(out Player playerHealth))
+                {
+                    playerHealth.TakeDamage(weaponDamage);
+                    hasDealtDamage = true;
+                    Debug.Log("playerHealth");
+                }
             }
         }
     }

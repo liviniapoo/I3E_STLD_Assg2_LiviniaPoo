@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 {
     /*Health Handling*/
     [SerializeField]
-    public int playerHealth = 100;
+    public float playerHealth = 100;
 
     /*Door Handling*/
     private NormalDoor normalDoor;
@@ -132,5 +132,21 @@ public class Player : MonoBehaviour
         {
             Debug.Log("No more medkits!");
         }
+    }
+
+    /*Health System*/
+    public void TakeDamage(float damageAmt)
+    {
+        playerHealth -= damageAmt;
+
+        if (playerHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        Debug.Log("Player died");
     }
 }

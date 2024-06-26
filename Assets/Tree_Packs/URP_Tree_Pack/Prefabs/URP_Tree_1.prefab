@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6744884194787191862}
   - component: {fileID: 3734529646151074635}
-  - component: {fileID: 8273034891427196405}
   m_Layer: 0
   m_Name: URP_Tree_1
   m_TagString: Untagged
@@ -68,28 +67,6 @@ LODGroup:
     renderers:
     - renderer: {fileID: 8851052174935355301}
   m_Enabled: 1
---- !u!64 &8273034891427196405
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 299712424454941021}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &3393009937179818794
 GameObject:
   m_ObjectHideFlags: 0
