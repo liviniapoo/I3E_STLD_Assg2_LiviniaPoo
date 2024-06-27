@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
 
     private CollectGun gunFront;
 
+    public static GameObject gunOnPlayer;
+
     ///<summary>
     /// Checking Gun in front
     /// </summary>
@@ -49,8 +51,8 @@ public class Player : MonoBehaviour
     /// <summary>
     /// Variables to check how much ammo player has
     /// </summary>
-    public int ammoBoxCount = 0;
-    public int ammoCount = 0;
+    public static int ammoBoxCount = 0;
+    public static int ammoCount = 0;
 
     private CollectAmmo ammoFront;
 
@@ -80,6 +82,22 @@ public class Player : MonoBehaviour
         medkitFront = medkitPos;
     }
 
+    /*Gear Handling*/
+    /// <summary>
+    /// Variable to check how many medkits player has
+    /// </summary>
+    public int gearCount = 0;
+
+    private CollectGearPart gearFront;
+
+    /// <summary>
+    /// Checking Medkit front
+    /// </summary>
+    public void GearUpdate(CollectGearPart gearPos)
+    {
+        gearFront = gearPos;
+    }
+
     void OnInteract()
     {
         if (gunFront != null)
@@ -91,9 +109,8 @@ public class Player : MonoBehaviour
             else
             {
                 gunFront.GunCollect();
+                gunOnPlayer.SetActive(true);
                 hasGun = true;
-
-                Debug.Log("gun col");
             }
         }
 
@@ -102,24 +119,28 @@ public class Player : MonoBehaviour
             ammoFront.AmmoCollect();
             ammoCount += 15;
             ammoBoxCount += 1;
-
-            Debug.Log(ammoCount);
-            Debug.Log(ammoBoxCount);
         }
 
         if (medkitFront != null)
         {
             medkitFront.MedkitCollect();
             medkitCount += 1;
-
-            Debug.Log(medkitCount);
         }
 
         if (normalDoor != null)
         {
             normalDoor.OpenShipDoor();
         }
+
+        if (gearFront != null)
+        {
+            gearFront.GearCollect();
+            gearCount += 1;
+
+            Debug.Log(gearCount);
+        }
     }
+
     private void OnHeal()
     {
         if (playerHealth < 100 && medkitCount > 0)
@@ -144,9 +165,13 @@ public class Player : MonoBehaviour
             Die();
         }
     }
-
     void Die()
     {
         Debug.Log("Player died");
+    }
+
+    private void Start()
+    {
+        gunOnPlayer.SetActive(false);
     }
 }

@@ -1,3 +1,10 @@
+/*
+ * Author: Livinia Poo
+ * Date: 25/06/2024
+ * Description: 
+ * Interacting with the door buttons to open
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,12 +21,12 @@ public class DoorButton : Interactable
         Debug.Log("called");
         if (!opened)
         {
-            door.GetComponent<doorController>().openDoor();
+            door.GetComponent<doorController>().OpenDoor();
             opened = true;
 
         }else if (opened)
         {
-            door.GetComponent<doorController>().closeDoor();
+            door.GetComponent<doorController>().CloseDoor();
             opened = false;
 
         }

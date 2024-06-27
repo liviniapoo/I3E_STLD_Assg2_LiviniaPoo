@@ -21,7 +21,7 @@ public class doorController : MonoBehaviour
         /*Debug.Log("triggered");*/
         if(other.tag=="Player")
         {
-            openDoor();
+            OpenDoor();
         }
     }
 
@@ -29,17 +29,17 @@ public class doorController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            closeDoor();
+            CloseDoor();
         }
     }
-    public void openDoor()
+    public void OpenDoor()
     {
         /*Debug.Log("dhjkfbasdjikbf");*/
         rightDoor.GetComponent<NormalDoor>().OpenShipDoor();
         leftDoor.GetComponent<NormalDoor>().OpenShipDoor();
 
     }
-    public void closeDoor()
+    public void CloseDoor()
     {
 
         rightDoor.GetComponent<NormalDoor>().CloseShipDoor();

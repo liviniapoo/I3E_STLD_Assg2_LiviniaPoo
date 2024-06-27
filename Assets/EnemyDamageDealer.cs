@@ -42,7 +42,8 @@ public class EnemyDamageDealer : MonoBehaviour
                 {
                     playerHealth.TakeDamage(weaponDamage);
                     hasDealtDamage = true;
-                    Debug.Log("playerHealth");
+
+                    print(playerHealth);
                 }
             }
         }

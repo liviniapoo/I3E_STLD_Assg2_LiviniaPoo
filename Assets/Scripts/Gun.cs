@@ -31,14 +31,22 @@ public class Gun : MonoBehaviour
 
         if (currentAmmo <= 0)
         {
-            StartCoroutine(Reload());
-            return;
+            if (Player.ammoCount > 0)
+            {
+                StartCoroutine(Reload());
+                return;
+            }
+            else
+            {
+                Debug.Log("No more ammo");
+            }
         }
 
         if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
+            
         }
     }
 
