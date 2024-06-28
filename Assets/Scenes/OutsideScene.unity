@@ -4407,7 +4407,7 @@ PrefabInstance:
     - target: {fileID: 1127559436565399344, guid: a25a822302c507d428e6819186801596,
         type: 3}
       propertyPath: m_Name
-      value: Enemy_Drop
+      value: Skele Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 5325097685416294962, guid: a25a822302c507d428e6819186801596,
         type: 3}

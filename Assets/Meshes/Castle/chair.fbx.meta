@@ -1,0 +1,319 @@
+fileFormatVersion: 2
+guid: a0755d4855c71ed4e8268aafd2865838
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Cubemap
+      assembly: UnityEngine.CoreModule
+      name: diffuse_cube
+    second: {fileID: 8900000, guid: d0ff21165cc565f469352cab5989e199, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chair_1001
+    second: {fileID: 2100000, guid: 5308c9c48eb971944991ab6c9ab1fad2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chair_1002
+    second: {fileID: 2100000, guid: 9ea5225743e51954ab4714b4d441ad58, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chair_1003
+    second: {fileID: 2100000, guid: f065cef4b523d9c4c955833816a970e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chair_1011
+    second: {fileID: 2100000, guid: 11c8da3e3dc711144874891f9031142f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chair_1012
+    second: {fileID: 2100000, guid: 7c1308304c14b8143ab01289dc1d4fbe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chair_1021
+    second: {fileID: 2100000, guid: b5a88c3b4dc29034c87f3b1ec3275df3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chair_1022
+    second: {fileID: 2100000, guid: 40cf64818d6775141b7a65a6b31d8a46, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chair_1023
+    second: {fileID: 2100000, guid: 2017add5ceb7dc44ab89d9afae26ef4e, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_AlbedoTransparency.1001
+    second: {fileID: 2800000, guid: 5126af9b39c460441b5cb455ebaff674, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_AlbedoTransparency.1002
+    second: {fileID: 2800000, guid: 66e360f3790bdc3459c2c5256db14b6c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_AlbedoTransparency.1003
+    second: {fileID: 2800000, guid: b65111241296efa41b5c76ceaeee78f5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_AlbedoTransparency.1011
+    second: {fileID: 2800000, guid: 0b56f9046f7c3b248be76ad810a2602f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_AlbedoTransparency.1012
+    second: {fileID: 2800000, guid: 08f3c60f429bbfb4b9913c9c34838907, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_AlbedoTransparency.1021
+    second: {fileID: 2800000, guid: 899d58f12e8f17342bae39b020e6e54c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_AlbedoTransparency.1022
+    second: {fileID: 2800000, guid: 476d0e4c5cdaa4743b491fb377f82bff, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_AlbedoTransparency.1023
+    second: {fileID: 2800000, guid: cc19c3c04288f904b8be37e7ebb9fab9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Metal.1001
+    second: {fileID: 2800000, guid: 5b722ccfc3ebdc74eaf5889fca1c9cc0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Metal.1002
+    second: {fileID: 2800000, guid: d71b6cf39f151a848824f4f35a04b6ec, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Metal.1003
+    second: {fileID: 2800000, guid: b942c6938935db64f8befaca22a55877, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Metal.1011
+    second: {fileID: 2800000, guid: 07c1c29dc3983a147be0487a62852b63, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Metal.1012
+    second: {fileID: 2800000, guid: bcf22747d92070f4781374a403ea02ad, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Metal.1021
+    second: {fileID: 2800000, guid: 58c9701dd3f9e6846951f74a2a399696, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Metal.1022
+    second: {fileID: 2800000, guid: 58f086c4106ee384b9a63baacbce2c33, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Metal.1023
+    second: {fileID: 2800000, guid: 38e423f463a947e44b2d0905b865c954, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Normal.1001
+    second: {fileID: 2800000, guid: bc85a3cd465000144aa381267beb9034, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Normal.1002
+    second: {fileID: 2800000, guid: 89109c347f4523a4687548f97f803143, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Normal.1003
+    second: {fileID: 2800000, guid: 5bca7e75abc89614d9436adff27e69ed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Normal.1011
+    second: {fileID: 2800000, guid: f5a14a7a12c873e4e94223811bc2f056, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Normal.1012
+    second: {fileID: 2800000, guid: c61723052018e3049bd40b9edc48a76d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Normal.1021
+    second: {fileID: 2800000, guid: b72c58eb0821d0a45a76b56b3b4e2a3e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Normal.1022
+    second: {fileID: 2800000, guid: a4099cb4840ec7f499c678f3ca49438a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Normal.1023
+    second: {fileID: 2800000, guid: b34a51d79942b0342b395c1e7a6ea4df, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Roughness.1001
+    second: {fileID: 2800000, guid: 1266f36b553b05147b44e9aa2a29b1bf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Roughness.1002
+    second: {fileID: 2800000, guid: 9a6b8cd4a2df58b4baac36bd534e13f2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Roughness.1003
+    second: {fileID: 2800000, guid: 204a3e2653c901441a451ffd75c188ca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Roughness.1011
+    second: {fileID: 2800000, guid: 22c7db3e3b784a744995c0220a7c91ad, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Roughness.1012
+    second: {fileID: 2800000, guid: 2f7e9dcdcf77b354483913b55996352a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Roughness.1021
+    second: {fileID: 2800000, guid: 8071493ff943cb24cb82a754678a7b8f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Roughness.1022
+    second: {fileID: 2800000, guid: 18b6249b52f62e44f859d0991808e270, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: chair_low_standardSurface1_Roughness.1023
+    second: {fileID: 2800000, guid: c06281742c9fef740961a3bbed8b92e9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ibl_brdf_lut
+    second: {fileID: 2800000, guid: 1eaf7e08c60ace8488878c6fb5472e55, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 1
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
