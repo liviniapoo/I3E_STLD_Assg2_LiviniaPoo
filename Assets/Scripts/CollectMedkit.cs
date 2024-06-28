@@ -2,32 +2,18 @@
  * Author: Livinia Poo
  * Date: 24/06/2024
  * Description: 
- * Destroys medkit asset upon collection
+ * Destroys medkit asset upon collection using parent class, increases medkit count
  */
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollectMedkit : MonoBehaviour
+public class CollectMedkit : Collectible
 {
-    public void MedkitCollect()
+    public override void Collect()
     {
-        Destroy(gameObject);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            other.gameObject.GetComponent<Player>().MedkitUpdate(this);
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            other.gameObject.GetComponent<Player>().MedkitUpdate(null);
-        }
+        base.Collect();
+        Player.medkitCount++;
     }
 }

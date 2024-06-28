@@ -2,33 +2,18 @@
  * Author: Livinia Poo
  * Date: 27/06/2024
  * Description: 
- * Destroys gear asset upon collection
+ * Destroys gear asset upon collection using parent class, increases gear count
  */
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollectGearPart : MonoBehaviour
+public class CollectGearPart : Collectible
 {
-    public void GearCollect()
+    public override void Collect()
     {
-        Destroy(gameObject);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            other.gameObject.GetComponent<Player>().GearUpdate(this);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            other.gameObject.GetComponent<Player>().GearUpdate(null);
-        }
+        base.Collect();
+        Player.gearCount++;
     }
 }

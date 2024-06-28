@@ -22,33 +22,66 @@ public class Raycasting : MonoBehaviour
     float interactionDistance;
 
     Interactable currentInteractable;
+    Collectible currentCollectible;
+    GemstoneLock gemstoneLockLook;
+
     private void Update()
     {
-        Debug.DrawLine(playerCamera.position, playerCamera.position + (playerCamera.forward * interactionDistance), Color.red);
+        Debug.DrawRay(playerCamera.position, playerCamera.TransformDirection(Vector3.forward) * interactionDistance, Color.red);
         RaycastHit hitInfo;
         if (Physics.Raycast(playerCamera.position, playerCamera.forward, out hitInfo, interactionDistance))
         {
-            /*Debug.Log(hitInfo.transform.name);*/
+            
             if (hitInfo.transform.TryGetComponent<Interactable>(out currentInteractable))
             {
+                Debug.Log(hitInfo.transform.name);
             }
             else
             {
                 currentInteractable = null;
             }
-        }
-        else
-        {
-            currentInteractable = null;
+
+            if (hitInfo.transform.TryGetComponent<Collectible>(out currentCollectible))
+            {
+            }
+            else
+            {
+                currentCollectible = null;
+            }
+            if (hitInfo.transform.TryGetComponent<GemstoneLock>(out gemstoneLockLook))
+            {
+                Debug.Log("Hit: " + hitInfo.transform.name);
+            }
+            else
+            {
+                gemstoneLockLook = null;
+            }
         }
 
 
     }
-    void OnInteract()
+    public void OnInteract()
     {
-        if(currentInteractable != null)
+        if (currentInteractable != null)
         {
             currentInteractable.Interact();
+        }
+
+        if (currentCollectible != null)
+        {
+            currentCollectible.Collect();
+        }
+
+        if (gemstoneLockLook != null)
+        {
+            if (Player.gemstoneCollected == true)
+            {
+                gemstoneLockLook.PlaceGem();
+            }
+            else
+            {
+                print("Find the gem.");
+            }
         }
     }
 }

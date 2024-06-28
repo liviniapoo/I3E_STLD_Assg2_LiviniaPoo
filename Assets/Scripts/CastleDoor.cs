@@ -50,7 +50,6 @@ public class CastleDoor : MonoBehaviour
                 {
                     opening = false;
                     opened = true;
-                    Debug.Log("Door opened");
                 }
             }
         }
@@ -58,10 +57,12 @@ public class CastleDoor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        /*Debug.Log("triggered");*/
-        if (other.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            OpenDoor();
+            if(GemstoneLock.gemPlaced == true)
+            {
+                OpenDoor();
+            }
         }
     }
 

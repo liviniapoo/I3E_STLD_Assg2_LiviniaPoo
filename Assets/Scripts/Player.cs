@@ -28,24 +28,12 @@ public class Player : MonoBehaviour
         normalDoor = doorPos;
     }
 
-
     /*Gun Handling*/
     /// <summary>
     /// Variables to check whether player has a gun
     /// </summary>
-    public bool hasGun = false;
-
-    private CollectGun gunFront;
-
+    public static bool hasGun = false;
     public static GameObject gunOnPlayer;
-
-    ///<summary>
-    /// Checking Gun in front
-    /// </summary>
-    public void GunUpdate(CollectGun gunPos)
-    {
-        gunFront = gunPos;
-    }
 
     /*Ammo Handling*/
     /// <summary>
@@ -54,90 +42,26 @@ public class Player : MonoBehaviour
     public static int ammoBoxCount = 0;
     public static int ammoCount = 0;
 
-    private CollectAmmo ammoFront;
-
-    /// <summary>
-    /// Checking ammo in front
-    /// </summary>
-    /// <param name="ammoPos"></param>
-    public void AmmoUpdate(CollectAmmo ammoPos)
-    {
-        ammoFront = ammoPos;
-    }
-
     /*Medkit Handling*/
     /// <summary>
     /// Variable to check how many medkits player has
     /// </summary>
-    public int medkitCount = 0;
+    public static int medkitCount = 0;
     public int healthRestoredPerHeal = 20;
-
-    private CollectMedkit medkitFront;
-
-    /// <summary>
-    /// Checking Medkit front
-    /// </summary>
-    public void MedkitUpdate(CollectMedkit medkitPos)
-    {
-        medkitFront = medkitPos;
-    }
 
     /*Gear Handling*/
     /// <summary>
     /// Variable to check how many medkits player has
     /// </summary>
-    public int gearCount = 0;
+    public static int gearCount = 0;
 
-    private CollectGearPart gearFront;
-
-    /// <summary>
-    /// Checking Medkit front
-    /// </summary>
-    public void GearUpdate(CollectGearPart gearPos)
-    {
-        gearFront = gearPos;
-    }
+    public static bool gemstoneCollected = false;
 
     void OnInteract()
     {
-        if (gunFront != null)
-        {
-            if (hasGun)
-            {
-                Debug.Log("Already have");
-            }
-            else
-            {
-                gunFront.GunCollect();
-                gunOnPlayer.SetActive(true);
-                hasGun = true;
-            }
-        }
-
-        if (ammoFront != null)
-        {
-            ammoFront.AmmoCollect();
-            ammoCount += 15;
-            ammoBoxCount += 1;
-        }
-
-        if (medkitFront != null)
-        {
-            medkitFront.MedkitCollect();
-            medkitCount += 1;
-        }
-
         if (normalDoor != null)
         {
             normalDoor.OpenShipDoor();
-        }
-
-        if (gearFront != null)
-        {
-            gearFront.GearCollect();
-            gearCount += 1;
-
-            Debug.Log(gearCount);
         }
     }
 

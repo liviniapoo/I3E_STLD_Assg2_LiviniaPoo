@@ -2,36 +2,19 @@
  * Author: Livinia Poo
  * Date: 24/06/2024
  * Description: 
- * Destroys ammo asset upon collection
+ * Destroys ammo asset upon collection using parent class, increases ammo count
  */
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollectAmmo : MonoBehaviour
+public class CollectAmmo : Collectible
 {
-    /// <summary>
-    /// Function destroys ammo on collection
-    /// </summary>
-    public void AmmoCollect()
+    public override void Collect()
     {
-        Destroy(gameObject);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            other.gameObject.GetComponent<Player>().AmmoUpdate(this);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            other.gameObject.GetComponent<Player>().AmmoUpdate(null);
-        }
+        base.Collect();
+        Player.ammoBoxCount++;
+        Player.ammoCount += 15;
     }
 }
