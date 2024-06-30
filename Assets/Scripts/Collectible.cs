@@ -11,6 +11,9 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
+    /// <summary>
+    /// All child classes will destroy the respective gameobjects upon collection
+    /// </summary>
     public virtual void Collect()
     {
         Destroy(gameObject);

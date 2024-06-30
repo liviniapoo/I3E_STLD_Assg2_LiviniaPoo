@@ -13,17 +13,26 @@ using UnityEngine;
 
 public class TreeFall : MonoBehaviour
 {
+    /// <summary>
+    /// Setting up variables to run the Lerp smoothly
+    /// </summary>
     public float moveDuration;
     float currentDuration;
     bool fallen = false;
     bool falling = false;
 
+    /// <summary>
+    /// Determining where the door should move to
+    /// </summary>
     [SerializeField]
     private float moveVector;
     private Vector3 targetRotation;
     private Vector3 startRotation;
 
-
+    /// <summary>
+    /// Calls the tree fall function upon player entering trigger
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
@@ -32,6 +41,9 @@ public class TreeFall : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Performs the lerp of moving the tree to be an obstacle, resets duration timer
+    /// </summary>
     public void TreeFallEvent()
     {
         if (!fallen)
@@ -46,6 +58,9 @@ public class TreeFall : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Uses time functions to properly execute lerp
+    /// </summary>
     private void Update()
     {
         if (falling)
@@ -59,7 +74,6 @@ public class TreeFall : MonoBehaviour
                 transform.eulerAngles = targetRotation;
                 falling = false;
                 fallen = true;
-                Debug.Log("Oh No! A tree is blocking!");
             }
         }
     }

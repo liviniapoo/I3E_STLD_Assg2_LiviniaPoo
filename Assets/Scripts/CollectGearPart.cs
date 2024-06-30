@@ -11,6 +11,9 @@ using UnityEngine;
 
 public class CollectGearPart : Collectible
 {
+    /// <summary>
+    /// Uses collect function from parent, adds player's gear part count
+    /// </summary>
     public override void Collect()
     {
         base.Collect();

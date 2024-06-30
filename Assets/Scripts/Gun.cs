@@ -4,10 +4,16 @@ using System.Collections;
 
 public class Gun : MonoBehaviour
 {
+    /// <summary>
+    /// Determines gun's statistics
+    /// </summary>
     public float gunDamage = 10f;
     public float gunRange = 100f;
     public float fireRate = 15f;
 
+    /// <summary>
+    /// Determines the starting state of the gun
+    /// </summary>
     public int maxAmmo = 15;
     private int currentAmmo;
     public float reloadTime = 1f;
@@ -17,11 +23,17 @@ public class Gun : MonoBehaviour
 
     private float nextTimeToFire = 0f;
 
+    /// <summary>
+    /// Sets the gun to be loaded upon start
+    /// </summary>
     private void Start()
     {
         currentAmmo = maxAmmo;
     }
 
+    /// <summary>
+    /// Reloads and fires gun every frame if triggered/conditions met
+    /// </summary>
     private void Update()
     {
         if (isReloading)
@@ -50,6 +62,9 @@ public class Gun : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Fires gun upon click and deals damage to enemies
+    /// </summary>
     void Shoot()
     {
         currentAmmo--;
@@ -73,6 +88,10 @@ public class Gun : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Uses coroutines to automaticallt reload the gun when ammo is out
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Reload()
     {
         isReloading = true;

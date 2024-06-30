@@ -11,6 +11,9 @@ using UnityEngine;
 
 public class CollectGun : Collectible
 {
+    /// <summary>
+    /// Uses collect function from parent, declares player has a gun
+    /// </summary>
     public override void Collect()
     {
         base.Collect();

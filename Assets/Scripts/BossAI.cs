@@ -10,8 +10,14 @@ using UnityEngine.AI;
 
 public class BossAI : MonoBehaviour
 {
+    /// <summary>
+    /// Variable for Boss' max starting health
+    /// </summary>
     public float bossHealth = 100f;
 
+    /// <summary>
+    /// Variables to determine Boss' combat statistics
+    /// </summary>
     [Header("Combat")]
     [SerializeField]
     float attackCool = 1.5f;
@@ -20,15 +26,24 @@ public class BossAI : MonoBehaviour
     [SerializeField]
     float aggroRange = 4f;
 
+    /// <summary>
+    /// Variables for Boss' AI
+    /// </summary>
     GameObject player;
     NavMeshAgent agent;
     Animator animator;
     float timeBtwnAttack;
     float newDestCool = 0.5f;
 
+    /// <summary>
+    /// Variable to attach asset mesh for loot dropped
+    /// </summary>
     [SerializeField]
     GameObject LootDropped;
 
+    /// <summary>
+    /// Attaching/Referencing respective components and gameobjects on start
+    /// </summary>
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -36,6 +51,9 @@ public class BossAI : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    /// <summary>
+    /// Updating Boss' movement and detection every update
+    /// </summary>
     private void Update()
     {
         animator.SetFloat("speed", agent.velocity.magnitude / agent.speed);
@@ -59,37 +77,51 @@ public class BossAI : MonoBehaviour
         transform.LookAt(player.transform);
     }
 
+    /// <summary>
+    /// Deducts health from Boss based on damage dealt by player and kills when 0
+    /// </summary>
+    /// <param name="amt"></param>
     public void TakeDamage(float amt)
     {
         bossHealth -= amt;
-        Debug.Log(bossHealth);
         if (bossHealth <= 0f)
         {
             Die();
         }
     }
 
+    /// <summary>
+    /// Removes the Boss from the scene upon death and spawns respective loot asset
+    /// </summary>
     public virtual void Die()
     {
         Destroy(gameObject);
         DropLoot();
     }
 
+    /// <summary>
+    /// Spawns the gameobject attached where the Boss is killed
+    /// </summary>
     void DropLoot()
     {
         GameObject lootInstance = Instantiate(LootDropped, transform.position, LootDropped.transform.rotation);
     }
 
+    /// <summary>
+    /// Start and end range for Boss' attack animation to determine when the player is hurt by the Boss
+    /// </summary>
     public void StartDealDamage()
     {
         GetComponentInChildren<EnemyDamageDealer>().StartDealDamage();
     }
-
     public void EndDealDamage()
     {
         GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
     }
 
+    ///<summary>
+    /// Highlights the Boss' detection range for when aggro-ed or attack
+    /// </summary>
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    /// <summary>
+    /// Keeps any gameobjects under the GameManager object while moving between scenes, destroys repeats
+    /// </summary>
     private void Awake()
     {
         if (instance == null)

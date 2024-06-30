@@ -41,6 +41,9 @@ public class EnemyAI : MonoBehaviour
     /// </summary>
     public EnemyHealthBar enemyHealthSlider;
 
+    /// <summary>
+    /// Attaching/Referencing respective components and gameobjects on start
+    /// </summary>
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
@@ -50,6 +53,9 @@ public class EnemyAI : MonoBehaviour
         enemyHealthSlider.SetMaxHealth(enemyHealth);
     }
 
+    /// <summary>
+    /// Updating enemy's movement and detection every update, updating enemy healthbar
+    /// </summary>
     private void Update()
     {
         animator.SetFloat("speed", agent.velocity.magnitude / agent.speed);
@@ -75,6 +81,10 @@ public class EnemyAI : MonoBehaviour
         enemyHealthSlider.SetHealth(enemyHealth);
     }
 
+    /// <summary>
+    /// Deducts health from enemy based on damage dealt by player and kills when 0
+    /// </summary>
+    /// <param name="amt"></param>
     public void TakeDamage(float amt)
     {
         enemyHealth -= amt;
@@ -84,21 +94,29 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Removes the enemy from the scene upon death
+    /// </summary>
     public virtual void Die()
     {
         Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Start and end range for enemy's attack animation to determine when the player is hurt by the enemy
+    /// </summary>
     public void StartDealDamage()
     {
         GetComponentInChildren<EnemyDamageDealer>().StartDealDamage();
     }
-
     public void EndDealDamage()
     {
         GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
     }
 
+    ///<summary>
+    /// Highlights the enemy's detection range for when aggro-ed or attack
+    /// </summary>
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;

@@ -12,11 +12,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    /*Health Handling*/
+    /// <summary>
+    /// Determines player's starting max health
+    /// </summary>
     [SerializeField]
     public float playerHealth = 100;
 
-    /*Door Handling*/
+    /// <summary>
+    /// Referencing door to Normal Door script
+    /// </summary>
     private NormalDoor normalDoor;
 
     /// <summary>
@@ -28,45 +32,59 @@ public class Player : MonoBehaviour
         normalDoor = doorPos;
     }
 
-    /*Gun Handling*/
     /// <summary>
     /// Variables to check whether player has a gun
     /// </summary>
     public static bool hasGun = false;
+    /// <summary>
+    /// Attaching gun to player
+    /// </summary>
     public GameObject gunOnPlayer;
 
-    /*Ammo Handling*/
     /// <summary>
     /// Variables to check how much ammo player has
     /// </summary>
     public static int ammoBoxCount = 0;
     public static int ammoCount = 0;
 
-    /*Medkit Handling*/
     /// <summary>
     /// Variable to check how many medkits player has
     /// </summary>
     public static int medkitCount = 0;
+    /// <summary>
+    /// Determines how much health is gained upon using medkit
+    /// </summary>
     public int healthRestoredPerHeal = 20;
 
-    /*Gear Handling*/
     /// <summary>
     /// Variable to check how many gears player has
     /// </summary>
     public static int gearCount = 0;
 
+    /// <summary>
+    /// Declares that player starts without gemstone
+    /// </summary>
     public static bool gemstoneCollected = false;
 
+    /// <summary>
+    /// Declares that player starts without crystal essence
+    /// </summary>
     public static bool essenceCollected = false;
 
-    void OnInteract()
+    /// <summary>
+    /// Opens the door upon interact
+    /// </summary>
+    /*void OnInteract()
     {
         if (normalDoor != null)
         {
             normalDoor.OpenShipDoor();
         }
-    }
+    }*/
 
+    ///<summary>
+    /// Heals player accordingly upon pressing Q
+    /// </summary>
     private void OnHeal()
     {
         if (playerHealth < 100 && medkitCount > 0)
@@ -81,7 +99,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    /*Health System*/
+    /// <summary>
+    /// Allows player to take damage when attacked by enemies, die when health is 0
+    /// </summary>
+    /// <param name="damageAmt"></param>
     public void TakeDamage(float damageAmt)
     {
         playerHealth -= damageAmt;
@@ -91,16 +112,26 @@ public class Player : MonoBehaviour
             Die();
         }
     }
+
+    /// <summary>
+    /// Destroys player object upon death
+    /// </summary>
     void Die()
     {
         Debug.Log("Player died");
     }
 
+    /// <summary>
+    /// Disables gun on player on start
+    /// </summary>
     private void Start()
     {
         gunOnPlayer.SetActive(false);
     }
 
+    /// <summary>
+    /// Enables gun on player once they collect a gun
+    /// </summary>
     private void Update()
     {
         if(hasGun)

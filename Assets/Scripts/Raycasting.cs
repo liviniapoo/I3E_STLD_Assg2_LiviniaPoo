@@ -14,18 +14,23 @@ public class Raycasting : MonoBehaviour
     ///<summary>
     ///Setting up Raycasting of Player
     ///</summary>
-    ///
     [SerializeField]
     Transform playerCamera;
 
     [SerializeField]
     float interactionDistance;
 
+    /// <summary>
+    /// Referencing scripts that utilise raycast
+    /// </summary>
     Interactable currentInteractable;
     Collectible currentCollectible;
     GemstoneLock gemstoneLockLook;
     RepairShip serverRepair;
 
+    /// <summary>
+    /// Checks what item is hit by raycast every update
+    /// </summary>
     private void Update()
     {
         Debug.DrawRay(playerCamera.position, playerCamera.TransformDirection(Vector3.forward) * interactionDistance, Color.red);
@@ -66,9 +71,11 @@ public class Raycasting : MonoBehaviour
                 serverRepair = null;
             }
         }
-
-
     }
+
+    /// <summary>
+    /// If appropriate mesh is detected and interacted, their respective functions are called
+    /// </summary>
     public void OnInteract()
     {
         if (currentInteractable != null)

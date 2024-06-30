@@ -11,11 +11,17 @@ using UnityEngine;
 
 public class doorController : MonoBehaviour
 {
+    /// <summary>
+    /// Attaching the two doors to the same gameobject
+    /// </summary>
     [SerializeField]
     private GameObject rightDoor;
-    
     public GameObject leftDoor;
 
+    /// <summary>
+    /// Opens the door upon player entering trigger area
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         /*Debug.Log("triggered");*/
@@ -25,6 +31,9 @@ public class doorController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Closes the door upon player leaving trigger area
+    /// </summary>
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -32,6 +41,10 @@ public class doorController : MonoBehaviour
             CloseDoor();
         }
     }
+
+    /// <summary>
+    /// Opens each side of the door in the same function
+    /// </summary>
     public void OpenDoor()
     {
         /*Debug.Log("dhjkfbasdjikbf");*/
@@ -39,6 +52,9 @@ public class doorController : MonoBehaviour
         leftDoor.GetComponent<NormalDoor>().OpenShipDoor();
 
     }
+    /// <summary>
+    /// Closes each side of the door in the same function
+    /// </summary>
     public void CloseDoor()
     {
 

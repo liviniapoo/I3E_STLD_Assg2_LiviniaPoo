@@ -11,6 +11,9 @@ using UnityEngine;
 
 public class CollectGemstone : Collectible
 {
+    /// <summary>
+    /// Uses collect function from parent, declares player has collected the gemstone
+    /// </summary>
     public override void Collect()
     {
         base.Collect();

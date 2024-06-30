@@ -12,16 +12,25 @@ using UnityEngine;
 
 public class CastleDoor : MonoBehaviour
 {
+    /// <summary>
+    /// Setting up variables to run the Lerp smoothly
+    /// </summary>
     public float moveDuration;
     float currentDuration;
     bool opening = false;
     public bool opened = false;
 
+    /// <summary>
+    /// Determining where the door should move to
+    /// </summary>
     [SerializeField]
     private Vector3 moveVector;
     private Vector3 targetPosition;
     private Vector3 startPosition;
 
+    /// <summary>
+    /// Moves the door to the target open position based on given information, resets Duration timer
+    /// </summary>
     public void OpenCastleGate()
     {
         if (!opening && !opened)
@@ -35,6 +44,9 @@ public class CastleDoor : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Performs the Lerp using Time functions
+    /// </summary>
     private void Update()
     {
         if (opening)
@@ -55,20 +67,24 @@ public class CastleDoor : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Checks whether the door is unlocked by the gem and opens on trigger
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             if(GemstoneLock.gemPlaced == true)
             {
-                OpenDoor();
+                OpenCastleGate();
             }
         }
     }
 
-    public void OpenDoor()
+    /*public void OpenDoor()
     {
         OpenCastleGate();
 
-    }
+    }*/
 }

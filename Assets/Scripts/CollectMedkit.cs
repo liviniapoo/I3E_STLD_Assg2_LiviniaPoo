@@ -11,6 +11,9 @@ using UnityEngine;
 
 public class CollectMedkit : Collectible
 {
+    /// <summary>
+    /// Uses collect function from parent, adds player's medkit count
+    /// </summary>
     public override void Collect()
     {
         base.Collect();
