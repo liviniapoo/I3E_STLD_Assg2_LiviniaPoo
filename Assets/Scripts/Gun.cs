@@ -58,6 +58,12 @@ public class Gun : MonoBehaviour
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, gunRange))
         {
             Debug.Log(hit.transform.name);
+            BossAI boss = hit.transform.GetComponent<BossAI>();
+            if (boss != null)
+            {
+                boss.TakeDamage(gunDamage);
+                Debug.Log("Boss Health:  " + boss.bossHealth);
+            }
 
             EnemyAI enemy = hit.transform.GetComponent<EnemyAI>();
             if (enemy != null)

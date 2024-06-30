@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     /// Variables to check whether player has a gun
     /// </summary>
     public static bool hasGun = false;
-    public static GameObject gunOnPlayer;
+    public GameObject gunOnPlayer;
 
     /*Ammo Handling*/
     /// <summary>
@@ -51,11 +51,13 @@ public class Player : MonoBehaviour
 
     /*Gear Handling*/
     /// <summary>
-    /// Variable to check how many medkits player has
+    /// Variable to check how many gears player has
     /// </summary>
     public static int gearCount = 0;
 
     public static bool gemstoneCollected = false;
+
+    public static bool essenceCollected = false;
 
     void OnInteract()
     {
@@ -97,5 +99,13 @@ public class Player : MonoBehaviour
     private void Start()
     {
         gunOnPlayer.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if(hasGun)
+        {
+            gunOnPlayer.SetActive(true);
+        }
     }
 }

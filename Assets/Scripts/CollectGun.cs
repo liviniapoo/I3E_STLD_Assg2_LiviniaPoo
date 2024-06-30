@@ -15,6 +15,5 @@ public class CollectGun : Collectible
     {
         base.Collect();
         Player.hasGun = true;
-        Player.gunOnPlayer.SetActive(true);
     }
 }

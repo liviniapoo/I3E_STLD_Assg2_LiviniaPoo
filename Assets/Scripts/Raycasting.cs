@@ -24,6 +24,7 @@ public class Raycasting : MonoBehaviour
     Interactable currentInteractable;
     Collectible currentCollectible;
     GemstoneLock gemstoneLockLook;
+    RepairShip serverRepair;
 
     private void Update()
     {
@@ -56,6 +57,14 @@ public class Raycasting : MonoBehaviour
             {
                 gemstoneLockLook = null;
             }
+
+            if (hitInfo.transform.TryGetComponent<RepairShip>(out serverRepair))
+            {
+            }
+            else
+            {
+                serverRepair = null;
+            }
         }
 
 
@@ -81,6 +90,20 @@ public class Raycasting : MonoBehaviour
             else
             {
                 print("Find the gem.");
+            }
+        }
+
+        if (serverRepair != null)
+        {
+            if (RepairShip.materialsCheck)
+            {
+                Debug.Log("Ship fixed");
+                serverRepair.FixShip();
+                RepairShip.shipFixed = true;
+            }
+            else
+            {
+                Debug.Log("Missing materials");
             }
         }
     }

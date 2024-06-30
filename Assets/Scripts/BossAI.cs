@@ -10,7 +10,7 @@ using UnityEngine.AI;
 
 public class BossAI : MonoBehaviour
 {
-    float bossHealth = 100f;
+    public float bossHealth = 100f;
 
     [Header("Combat")]
     [SerializeField]
@@ -62,6 +62,7 @@ public class BossAI : MonoBehaviour
     public void TakeDamage(float amt)
     {
         bossHealth -= amt;
+        Debug.Log(bossHealth);
         if (bossHealth <= 0f)
         {
             Die();
@@ -76,7 +77,7 @@ public class BossAI : MonoBehaviour
 
     void DropLoot()
     {
-        Instantiate(LootDropped, transform.position, LootDropped.transform.rotation);
+        GameObject lootInstance = Instantiate(LootDropped, transform.position, LootDropped.transform.rotation);
     }
 
     public void StartDealDamage()
