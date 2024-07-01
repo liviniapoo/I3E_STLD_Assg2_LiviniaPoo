@@ -1,3 +1,10 @@
+/*
+ * Author: Livinia Poo
+ * Date: 30/06/2024
+ * Description: 
+ * Checks whether player has materials to repair ship
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +20,7 @@ public class RepairShip : MonoBehaviour
     /// <summary>
     /// Determines the minimum materials needed
     /// </summary>
-    int gearsNeeded = 10;
+    int gearsNeeded = 6;
 
     /// <summary>
     /// Checks materials player has upon trigger
@@ -34,10 +41,10 @@ public class RepairShip : MonoBehaviour
         }
     }
 
-
     public void FixShip()
     {
         Debug.Log("Ship has been fixed");
         shipFixed = true;
+        /*UIInteractions.gearCounter.text.SetActive(false);*/
     }
 }

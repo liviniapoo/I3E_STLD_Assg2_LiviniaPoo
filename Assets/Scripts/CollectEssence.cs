@@ -12,11 +12,17 @@ using UnityEngine;
 public class CollectEssence : Collectible
 {
     /// <summary>
-    /// Uses collect function from parent, declares that player has collected the crystal essence
+    /// Collects using parent script, references GameManager to activate tele
     /// </summary>
     public override void Collect()
     {
         base.Collect();
         Player.essenceCollected = true;
+        Player.essenceCount = 1;
+        
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.ActivateTeleMesh();
+        }
     }
 }

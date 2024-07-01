@@ -2,44 +2,40 @@
  * Author: Livinia Poo
  * Date: 25/06/2024
  * Description: 
- * Managing UI Interactions throughout the game
+ * Updating Player UI throughout the game
  */
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class UIInteractions : MonoBehaviour
 {
     /// <summary>
-    /// Variables to set up Player's Healthbar
+    /// Referencing Text UIs
     /// </summary>
-    /*Health Bar*/
-    public Slider healthSlider;
-    public Gradient healthGradient;
-    public Image healthFill;
+    public TextMeshProUGUI ammoCounter;
+    public TextMeshProUGUI medkitCounter;
+    public TextMeshProUGUI gearCounter;
+    public TextMeshProUGUI essenceCounter;
 
     /// <summary>
-    /// Setting for player's starting max health
+    /// Display text
     /// </summary>
-    /// <param name="health"></param>
-    public void SetMaxHealth(float health)
+    private void Update()
     {
-        healthSlider.maxValue = health;
-        healthSlider.value = health;
+        if(Player.hasGun == true)
+        {
+            ammoCounter.text = $"{Gun.currentAmmo}||{Player.ammoCount}";
+        }
+        else
+        {
+            ammoCounter.text = $"0||{Player.ammoCount}";
+        }
+        medkitCounter.text = $"Medkits Left: {Player.medkitCount}";
+        gearCounter.text = $"Gears Collected: {Player.gearCount}/6";
+        essenceCounter.text = $"Crystal Essence Collected: {Player.essenceCount}/1";
 
-        healthFill.color = healthGradient.Evaluate(1f);
-    }
-    
-    /// <summary>
-    /// Adjusts the health bar's position based on the player's current health
-    /// </summary>
-    /// <param name="health"></param>
-    public void SetHealth(float health)
-    {
-       healthSlider.value = health;
-
-       healthFill.color = healthGradient.Evaluate(healthSlider.normalizedValue);
     }
 }

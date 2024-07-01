@@ -16,7 +16,14 @@ public class CollectGun : Collectible
     /// </summary>
     public override void Collect()
     {
-        base.Collect();
-        Player.hasGun = true;
+        if (Player.hasGun == true)
+        {
+            Debug.Log("already hv");
+        }
+        else
+        {
+            base.Collect();
+            Player.hasGun = true;
+        }
     }
 }

@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public GameObject teleMesh;
+
     /// <summary>
     /// Keeps any gameobjects under the GameManager object while moving between scenes, destroys repeats
     /// </summary>
@@ -28,5 +30,30 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         
+    }
+
+    /// <summary>
+    /// Disabling tele on Start
+    /// </summary>
+    private void Start()
+    {
+        if (teleMesh != null)
+        {
+            teleMesh.SetActive(false);
+        }
+    }
+
+    /// <summary>
+    /// Function activates teleporter
+    /// </summary>
+    public void ActivateTeleMesh()
+    {
+        if (teleMesh != null)
+        {
+            teleMesh.SetActive (true);
+        }
+        {
+            
+        }
     }
 }

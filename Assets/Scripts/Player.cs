@@ -17,6 +17,11 @@ public class Player : MonoBehaviour
     /// </summary>
     [SerializeField]
     public float playerHealth = 100;
+    public float playerMaxHealth = 100;
+    public bool isDead = false;
+
+    public PlayerHealthBar healthBar;
+    public PlayerDeath deathUI;
 
     /// <summary>
     /// Referencing door to Normal Door script
@@ -70,21 +75,8 @@ public class Player : MonoBehaviour
     /// Declares that player starts without crystal essence
     /// </summary>
     public static bool essenceCollected = false;
+    public static int essenceCount = 0;
 
-    /// <summary>
-    /// Opens the door upon interact
-    /// </summary>
-    /*void OnInteract()
-    {
-        if (normalDoor != null)
-        {
-            normalDoor.OpenShipDoor();
-        }
-    }*/
-
-    ///<summary>
-    /// Heals player accordingly upon pressing Q
-    /// </summary>
     private void OnHeal()
     {
         if (playerHealth < 100 && medkitCount > 0)
@@ -92,6 +84,7 @@ public class Player : MonoBehaviour
             playerHealth += healthRestoredPerHeal;
             medkitCount -= 1;
             Debug.Log(playerHealth);
+            healthBar.SetPlayerHealth(playerHealth);
         }
         else if (medkitCount == 0)
         {
@@ -106,9 +99,12 @@ public class Player : MonoBehaviour
     public void TakeDamage(float damageAmt)
     {
         playerHealth -= damageAmt;
+        healthBar.SetPlayerHealth(playerHealth);
 
-        if (playerHealth <= 0)
+        if (playerHealth <= 0 && !isDead)
         {
+            isDead = true;
+            deathUI.playerDeathUI.SetActive(true);
             Die();
         }
     }
@@ -127,6 +123,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
         gunOnPlayer.SetActive(false);
+        healthBar.SetPlayerMaxHealth(playerMaxHealth);
+        deathUI.playerDeathUI.SetActive(false);
     }
 
     /// <summary>

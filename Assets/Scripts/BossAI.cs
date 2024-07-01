@@ -36,6 +36,11 @@ public class BossAI : MonoBehaviour
     float newDestCool = 0.5f;
 
     /// <summary>
+    /// Referencing to Enemy Health Bar script to apply healthbar on enemy
+    /// </summary>
+    public EnemyHealthBar enemyHealthSlider;
+
+    /// <summary>
     /// Variable to attach asset mesh for loot dropped
     /// </summary>
     [SerializeField]
@@ -49,6 +54,8 @@ public class BossAI : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+
+        enemyHealthSlider.SetMaxHealth(bossHealth);
     }
 
     /// <summary>
@@ -75,6 +82,8 @@ public class BossAI : MonoBehaviour
         }
         newDestCool -= Time.deltaTime;
         transform.LookAt(player.transform);
+
+        enemyHealthSlider.SetHealth(bossHealth);
     }
 
     /// <summary>

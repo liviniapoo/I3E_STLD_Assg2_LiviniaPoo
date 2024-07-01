@@ -1,3 +1,9 @@
+/*
+ * Author: Livinia Poo
+ * Date: 24/06/2024
+ * Description: 
+ * Controls gun shooting and reloading
+ */
 
 using UnityEngine;
 using System.Collections;
@@ -15,11 +21,12 @@ public class Gun : MonoBehaviour
     /// Determines the starting state of the gun
     /// </summary>
     public int maxAmmo = 15;
-    private int currentAmmo;
+    public static int currentAmmo;
     public float reloadTime = 1f;
     private bool isReloading = false;
 
     public Camera fpsCam;
+    public ParticleSystem muzzleFlash;
 
     private float nextTimeToFire = 0f;
 
@@ -36,29 +43,33 @@ public class Gun : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (isReloading)
+        if (!PauseMenu.isPaused)
         {
-            return;
-        }
-
-        if (currentAmmo <= 0)
-        {
-            if (Player.ammoCount > 0)
+            if (isReloading)
             {
-                StartCoroutine(Reload());
                 return;
             }
-            else
-            {
-                Debug.Log("No more ammo");
-            }
-        }
 
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
-        {
-            nextTimeToFire = Time.time + 1f / fireRate;
-            Shoot();
-            
+            if (currentAmmo <= 0)
+            {
+                if (Player.ammoCount > 0)
+                {
+                    StartCoroutine(Reload());
+                    return;
+                }
+                else
+                {
+                    Debug.Log("No more ammo");
+                }
+            }
+
+            if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
+            {
+                nextTimeToFire = Time.time + 1f / fireRate;
+                Shoot();
+                muzzleFlash.Play();
+
+            }
         }
     }
 
@@ -101,5 +112,6 @@ public class Gun : MonoBehaviour
 
         currentAmmo = maxAmmo;
         isReloading = false;
+        Player.ammoCount -= 15;
     }
 }
