@@ -13,8 +13,14 @@ using TMPro;
 [System .Serializable]
 public class Dialogue
 {
+    /// <summary>
+    /// Characters field for dialogue
+    /// </summary>
     public string[] names;
 
+    /// <summary>
+    /// Sentence field for dialogue
+    /// </summary>
     [TextArea(3,10)]
     public string[] sentences;
 }

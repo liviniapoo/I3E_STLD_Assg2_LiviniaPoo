@@ -88,9 +88,4 @@ public class CastleDoor : MonoBehaviour
         }
     }
 
-    /*public void OpenDoor()
-    {
-        OpenCastleGate();
-
-    }*/
 }

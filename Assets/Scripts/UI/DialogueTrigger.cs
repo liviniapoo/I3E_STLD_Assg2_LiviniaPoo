@@ -11,13 +11,23 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    /// <summary>
+    /// Setting up UI dialogues
+    /// </summary>
     public Dialogue dialogue;
 
+    /// <summary>
+    /// Function to start dialogue UI
+    /// </summary>
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 
+    /// <summary>
+    /// Calls function on trigger enter
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

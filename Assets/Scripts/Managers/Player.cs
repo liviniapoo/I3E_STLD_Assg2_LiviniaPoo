@@ -2,7 +2,7 @@
  * Author: Livinia Poo
  * Date: 24/06/2024
  * Description: 
- * 
+ * Player variables and inputs
  */
 
 
@@ -65,6 +65,9 @@ public class Player : MonoBehaviour
     public static bool essenceCollected = false;
     public static int essenceCount = 0;
 
+    /// <summary>
+    /// Player heals health when hit keybind
+    /// </summary>
     private void OnHeal()
     {
         if (playerHealth < 100 && medkitCount > 0)

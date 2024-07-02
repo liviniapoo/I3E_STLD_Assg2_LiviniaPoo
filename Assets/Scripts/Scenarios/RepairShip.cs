@@ -45,6 +45,9 @@ public class RepairShip : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Function to fix ship
+    /// </summary>
     public void FixShip()
     {
         Debug.Log("Ship has been fixed");

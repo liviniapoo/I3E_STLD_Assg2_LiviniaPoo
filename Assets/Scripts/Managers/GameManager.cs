@@ -2,7 +2,7 @@
  * Author: Livinia Poo
  * Date: 25/06/2024
  * Description: 
- * Keeping player values and progress through scenes
+ * Keeping game values, UI and progress through scenes
  */
 
 using System.Collections;
@@ -13,12 +13,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    /// <summary>
+    /// Declaring static GameManager
+    /// </summary>
     public static GameManager instance;
 
-    private int initialGearCount;
-    private int initialMedkitCount;
-    private int initialAmmoCount;
-
+    /// <summary>
+    /// UI Controlled by Game Manager
+    /// </summary>
     public PlayerDeath deathUI;
     public PauseMenu pauseMenu;
     public PlayerHealthBar healthBar;
@@ -41,7 +43,7 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Disabling tele on Start
+    /// Resetting Healthbar
     /// </summary>
     private void Start()
     {
@@ -54,11 +56,17 @@ public class GameManager : MonoBehaviour
         healthBar.SetPlayerHealth(Player.playerHealth);
     }  
 
+    /// <summary>
+    /// Shows Player Death screen
+    /// </summary>
     public void ShowDeathUI()
     {
         deathUI.DeathUI();
     }
 
+    /// <summary>
+    /// Toggles game Pause Screen
+    /// </summary>
     public void ShowPauseUI()
     {
         pauseMenu.PauseGame();
@@ -69,6 +77,9 @@ public class GameManager : MonoBehaviour
         pauseMenu.ResumeGame();
     }
 
+    /// <summary>
+    /// Updating Player Healthbar
+    /// </summary>
     private void Update()
     {
         healthBar.SetPlayerHealth(Player.playerHealth);

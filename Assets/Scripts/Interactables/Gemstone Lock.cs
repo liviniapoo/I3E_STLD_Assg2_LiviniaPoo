@@ -1,3 +1,10 @@
+/*
+ * Author: Livinia Poo
+ * Date: 27/06/2024
+ * Description: 
+ * Lock mechanic for Castle Door
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

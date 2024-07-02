@@ -13,15 +13,27 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    /// <summary>
+    /// Attaching dialogue parameters
+    /// </summary>
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public GameObject dialogueBox;
 
+    /// <summary>
+    /// Deciding how many sentences and characters speak
+    /// </summary>
     private Queue<string> names;
     private Queue<string> sentences;
 
+    /// <summary>
+    /// Whether clicking should fire gun
+    /// </summary>
     public static bool canShoot;
 
+    /// <summary>
+    /// Sets up but disables UI dialogue
+    /// </summary>
     private void Start()
     {
         names = new Queue<string>();
@@ -29,6 +41,10 @@ public class DialogueManager : MonoBehaviour
         dialogueBox.SetActive(false);
     }
 
+    /// <summary>
+    /// Function to start dialogue based on characters and sentences, locks game, words in typing animation
+    /// </summary>
+    /// <param name="dialogue"></param>
     public void StartDialogue(Dialogue dialogue)
     {
         canShoot = false;
@@ -53,6 +69,9 @@ public class DialogueManager : MonoBehaviour
         DisplayNextSentence();
     }
 
+    /// <summary>
+    /// Function to move from one dialogue sentence to another
+    /// </summary>
     public void DisplayNextSentence()
     {
         if (sentences.Count == 0)
@@ -69,6 +88,11 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
     }
 
+    /// <summary>
+    /// Animation
+    /// </summary>
+    /// <param name="sentence"></param>
+    /// <returns></returns>
     IEnumerator TypeSentence(string  sentence)
     {
         dialogueText.text = "";
@@ -79,6 +103,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Closes dialogue, resumes game per normal
+    /// </summary>
     void EndDialogue()
     {
         Debug.Log("End of conversation");

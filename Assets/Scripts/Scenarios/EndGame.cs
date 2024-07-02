@@ -13,13 +13,22 @@ using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
+    /// <summary>
+    /// UI to show when win
+    /// </summary>
     public GameObject victoryScreen;
-
+    
+    /// <summary>
+    /// Disabling the victory screen on awake
+    /// </summary>
     private void Start()
     {
         victoryScreen.SetActive(false);
     }
 
+    /// <summary>
+    /// Function to enable victory screen and halt game environment
+    /// </summary>
     public void Victory()
     {
         victoryScreen.SetActive(true);

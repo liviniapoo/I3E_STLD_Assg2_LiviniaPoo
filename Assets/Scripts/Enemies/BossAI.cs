@@ -15,6 +15,9 @@ public class BossAI : MonoBehaviour
     /// </summary>
     public float bossHealth = 100f;
 
+    /// <summary>
+    /// Mesh to spawn if Boss dies
+    /// </summary>
     [SerializeField]
     GameObject teleMesh;
 
@@ -50,7 +53,7 @@ public class BossAI : MonoBehaviour
     GameObject LootDropped;
 
     /// <summary>
-    /// Attaching/Referencing respective components and gameobjects on start
+    /// Attaching/Referencing respective components and gameobjects on start, disabling teleporter
     /// </summary>
     private void Start()
     {
@@ -63,7 +66,7 @@ public class BossAI : MonoBehaviour
     }
 
     /// <summary>
-    /// Updating Boss' movement and detection every update
+    /// Updating Boss' movement and detection every update, updating Healthbar
     /// </summary>
     private void Update()
     {
@@ -104,7 +107,7 @@ public class BossAI : MonoBehaviour
     }
 
     /// <summary>
-    /// Removes the Boss from the scene upon death and spawns respective loot asset
+    /// Removes the Boss from the scene upon death and spawns respective loot asset, activates teleporter
     /// </summary>
     public virtual void Die()
     {

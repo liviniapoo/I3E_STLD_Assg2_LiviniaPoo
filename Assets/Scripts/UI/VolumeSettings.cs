@@ -13,6 +13,9 @@ using UnityEngine.UI;
 
 public class VolumeSettings : MonoBehaviour
 {
+    /// <summary>
+    /// Attaching respective mixers to sliders
+    /// </summary>
     [SerializeField]
     private AudioMixer myMixer;
     [SerializeField]
@@ -20,6 +23,9 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField]
     private Slider sfxSlider;
 
+    /// <summary>
+    /// Setting up preferred volume settings
+    /// </summary>
     private void Start()
     {
         if(PlayerPrefs.HasKey("musicVolume"))
@@ -33,6 +39,9 @@ public class VolumeSettings : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Function to set background music volume
+    /// </summary>
     public void SetMusicVolume()
     {
         float volume = bgmSlider.value;
@@ -40,6 +49,9 @@ public class VolumeSettings : MonoBehaviour
         PlayerPrefs.SetFloat("musicVolume", volume);
     }
 
+    /// <summary>
+    /// Function to set SFX volume
+    /// </summary>
     public void SetSFXVolume()
     {
         float volume = sfxSlider.value;
@@ -47,6 +59,9 @@ public class VolumeSettings : MonoBehaviour
         PlayerPrefs.SetFloat("SFXVolume", volume);
     }
 
+    /// <summary>
+    /// Sets music and sounds to player's last setting
+    /// </summary>
     private void LoadVolume()
     {
         bgmSlider.value = PlayerPrefs.GetFloat("musicVolume");

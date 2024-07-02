@@ -25,6 +25,9 @@ public class Gun : MonoBehaviour
     public float reloadTime = 1f;
     private bool isReloading = false;
 
+    /// <summary>
+    /// Attaching effects
+    /// </summary>
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
 
