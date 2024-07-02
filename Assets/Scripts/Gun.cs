@@ -30,6 +30,11 @@ public class Gun : MonoBehaviour
 
     private float nextTimeToFire = 0f;
 
+    ///<summary>
+    /// Referencing Audio Clips for Effects
+    /// </summary>
+    public AudioSource sfxAudio;
+
     /// <summary>
     /// Sets the gun to be loaded upon start
     /// </summary>
@@ -68,6 +73,7 @@ public class Gun : MonoBehaviour
                 nextTimeToFire = Time.time + 1f / fireRate;
                 Shoot();
                 muzzleFlash.Play();
+                sfxAudio.Play();
 
             }
         }

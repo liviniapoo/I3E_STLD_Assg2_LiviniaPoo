@@ -11,6 +11,11 @@ public class GemstoneLock : MonoBehaviour
     public GameObject gemLock;
     public static bool gemPlaced = false;
 
+    ///<summary>
+    /// Referencing Audio Clips for Effects
+    /// </summary>
+    public AudioSource sfxAudio;
+
     /// <summary>
     /// Disables the gem's mesh visibilty on start
     /// </summary>
@@ -36,5 +41,6 @@ public class GemstoneLock : MonoBehaviour
     public void PlaceGem()
     {
         gemPlaced = true;
+        sfxAudio.Play();
     }
 }

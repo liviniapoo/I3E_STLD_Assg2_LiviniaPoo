@@ -56,6 +56,12 @@ public class Player : MonoBehaviour
     /// Variable to check how many medkits player has
     /// </summary>
     public static int medkitCount = 0;
+
+    ///<summary>
+    /// Referencing Audio Clips for Effects
+    /// </summary>
+    public AudioSource sfxHealAudio;
+
     /// <summary>
     /// Determines how much health is gained upon using medkit
     /// </summary>

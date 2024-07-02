@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90bd10f7b2572344f89bc0b93391d6c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleMesh: {fileID: 0}
+  sfxAudio: {fileID: 8300000, guid: 8292f4e797ecd414cbe05b101344f3ad, type: 3}
 --- !u!1 &6527710111600332611
 GameObject:
   m_ObjectHideFlags: 0

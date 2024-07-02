@@ -29,6 +29,11 @@ public class TreeFall : MonoBehaviour
     private Vector3 targetRotation;
     private Vector3 startRotation;
 
+    ///<summary>
+    /// Referencing Audio Clips for Effects
+    /// </summary>
+    public AudioSource sfxAudio;
+
     /// <summary>
     /// Calls the tree fall function upon player entering trigger
     /// </summary>
@@ -38,6 +43,7 @@ public class TreeFall : MonoBehaviour
         if(other.tag == "Player")
         {
             TreeFallEvent();
+            sfxAudio.Play();
         }
     }
 

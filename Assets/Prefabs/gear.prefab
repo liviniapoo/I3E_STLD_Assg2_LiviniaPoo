@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 401e408dd33ffeb40bacca45826aa19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfxAudio: {fileID: 8300000, guid: 8292f4e797ecd414cbe05b101344f3ad, type: 3}
 --- !u!65 &4520191747087602552
 BoxCollider:
   m_ObjectHideFlags: 0

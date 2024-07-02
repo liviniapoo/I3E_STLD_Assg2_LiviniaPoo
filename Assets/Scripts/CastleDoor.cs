@@ -28,6 +28,11 @@ public class CastleDoor : MonoBehaviour
     private Vector3 targetPosition;
     private Vector3 startPosition;
 
+    ///<summary>
+    /// Referencing Audio Clips for Effects
+    /// </summary>
+    public AudioSource sfxAudio;
+
     /// <summary>
     /// Moves the door to the target open position based on given information, resets Duration timer
     /// </summary>
@@ -78,6 +83,7 @@ public class CastleDoor : MonoBehaviour
             if(GemstoneLock.gemPlaced == true)
             {
                 OpenCastleGate();
+                sfxAudio.Play();
             }
         }
     }
