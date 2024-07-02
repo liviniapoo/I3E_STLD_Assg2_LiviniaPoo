@@ -3,7 +3,12 @@ guid: 56240bdb18c86824280c4f941245edbd
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - teleMesh: {fileID: 7453493695402855013, guid: 6d304325e9d36524c90973f0080d7f6e,
+      type: 3}
+  - deathUI: {instanceID: 0}
+  - pauseMenu: {instanceID: 0}
+  - healthBar: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

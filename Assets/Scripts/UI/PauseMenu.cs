@@ -45,6 +45,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
 
         Debug.Log("Game paused");
+        DialogueManager.canShoot = false;
     }
 
     /// <summary>
@@ -60,6 +61,7 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = false;
 
         Debug.Log("Game resumed");
+        DialogueManager.canShoot = true;
     }
 
     /// <summary>

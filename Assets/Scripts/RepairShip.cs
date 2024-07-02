@@ -20,23 +20,27 @@ public class RepairShip : MonoBehaviour
     /// <summary>
     /// Determines the minimum materials needed
     /// </summary>
-    int gearsNeeded = 6;
+    public int gearsNeeded = 6;
 
     /// <summary>
     /// Checks materials player has upon trigger
     /// </summary>
     /// <param name="other"></param>
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
+        Debug.Log("OnTriggerEnter called");
         if(other.gameObject.tag == "Player")
         {
+            Debug.Log("Player entered trigger");
             if (Player.gearCount >= gearsNeeded && Player.essenceCollected == true)
             {
                 materialsCheck = true;
+                FixShip();
             }
             else if (Player.gearCount < gearsNeeded || Player.essenceCollected == false)
             {
                 materialsCheck = false;
+                Debug.Log("Missing Materials!");
             }
         }
     }
@@ -45,6 +49,5 @@ public class RepairShip : MonoBehaviour
     {
         Debug.Log("Ship has been fixed");
         shipFixed = true;
-        /*UIInteractions.gearCounter.text.SetActive(false);*/
     }
 }

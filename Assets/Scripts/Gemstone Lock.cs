@@ -31,8 +31,8 @@ public class GemstoneLock : MonoBehaviour
     {
         if (gemPlaced)
         {
+            Debug.Log("Gem placed, activating lock mesh");
             gemLock.SetActive(true);
-            /*sfxAudio.Play();*/
         }
     }
 
@@ -42,5 +42,6 @@ public class GemstoneLock : MonoBehaviour
     public void PlaceGem()
     {
         gemPlaced = true;
+        sfxAudio.Play();
     }
 }

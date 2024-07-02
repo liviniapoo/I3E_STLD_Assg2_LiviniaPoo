@@ -68,7 +68,7 @@ public class Gun : MonoBehaviour
                 }
             }
 
-            if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire)
+            if (Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire && DialogueManager.canShoot)
             {
                 nextTimeToFire = Time.time + 1f / fireRate;
                 Shoot();

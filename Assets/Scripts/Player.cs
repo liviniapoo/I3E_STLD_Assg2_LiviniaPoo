@@ -99,9 +99,9 @@ public class Player : MonoBehaviour
     /// </summary>
     void Die()
     {
-        Destroy(gameObject);
         GameManager.instance.ShowDeathUI();
         ResetHealth();
+        GameManager.instance.ResetHealthBar();
     }
 
     /// <summary>

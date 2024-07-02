@@ -9,6 +9,8 @@ public class PlayerDeath : MonoBehaviour
     /// Attaching the UI to script
     /// </summary>
     public GameObject playerDeathUI;
+    public GameObject playerPrefab;
+    private GameObject playerInstance;
 
     /// <summary>
     /// Disabling the Death UI when game starts
@@ -34,12 +36,14 @@ public class PlayerDeath : MonoBehaviour
     /// </summary>
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Destroy(playerInstance);
         playerDeathUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        GameManager.instance.ResetHealthBar();
+        ResetHealthBar();
         Time.timeScale = 1f;
+        SpawnPlayer();
     }
 
     /// <summary>
@@ -60,5 +64,16 @@ public class PlayerDeath : MonoBehaviour
     {
         Debug.Log("quit app!");
         Application.Quit();
+    }
+
+    private void ResetHealthBar()
+    {
+        GameManager.instance.healthBar.SetPlayerMaxHealth(Player.playerMaxHealth);
+        GameManager.instance.healthBar.SetPlayerHealth(Player.playerHealth);
+    }
+
+    private void SpawnPlayer()
+    {
+        playerInstance  = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
     }
 }

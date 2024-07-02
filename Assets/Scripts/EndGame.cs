@@ -1,9 +1,52 @@
+/*
+ * Author: Livinia Poo
+ * Date: 30/06/2024
+ * Description: 
+ * Checks whether player can end game
+ */
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
+    public GameObject victoryScreen;
+
+    private void Start()
+    {
+        victoryScreen.SetActive(false);
+    }
+
+    public void Victory()
+    {
+        victoryScreen.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        DialogueManager.canShoot = false;
+    }
+
+    /// <summary>
+    /// Function to return player to menu
+    /// </summary>
+    public void ReturnToMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("StartMenu");
+    }
+
+    /// <summary>
+    /// Function to quit game app
+    /// </summary>
+    public void QuitGame()
+    {
+        Debug.Log("quit app!");
+        Application.Quit();
+    }
+
     /// <summary>
     /// Ends the game if certain condition is met
     /// </summary>
@@ -14,11 +57,7 @@ public class EndGame : MonoBehaviour
         {
             if (RepairShip.shipFixed)
             {
-                Debug.Log("Congratulations! You've made it off the planet!");
-            }
-            else
-            {
-                Debug.Log("Fix the ship first");
+                Victory();
             }
         }
     }

@@ -40,7 +40,7 @@ public class TreeFall : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.CompareTag("Player"))
         {
             TreeFallEvent();
             sfxAudio.Play();

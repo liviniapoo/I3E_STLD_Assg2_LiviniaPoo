@@ -42,8 +42,16 @@ public class UIInteractions : MonoBehaviour
         {
             medkitCounter.text = "";
         }
-        gearCounter.text = $"Gears Collected: {Player.gearCount}/6";
-        essenceCounter.text = $"Crystal Essence Collected: {Player.essenceCount}/1";
 
+        if (RepairShip.shipFixed)
+        {
+            gearCounter.text = "";
+            essenceCounter.text = "";
+        }
+        else
+        {
+            gearCounter.text = $"Gears Collected: {Player.gearCount}/6";
+            essenceCounter.text = $"Crystal Essence Collected: {Player.essenceCount}/1";
+        }
     }
 }

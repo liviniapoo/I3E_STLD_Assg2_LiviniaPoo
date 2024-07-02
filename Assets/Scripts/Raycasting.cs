@@ -90,8 +90,10 @@ public class Raycasting : MonoBehaviour
 
         if (gemstoneLockLook != null)
         {
-            if (Player.gemstoneCollected == true)
+            Debug.Log("Gemstone Lock detected");
+            if (Player.gemstoneCollected)
             {
+                Debug.Log("Placing Gem...");
                 gemstoneLockLook.PlaceGem();
             }
             else

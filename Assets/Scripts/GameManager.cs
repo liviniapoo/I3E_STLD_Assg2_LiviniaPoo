@@ -8,16 +8,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public GameObject teleMesh;
+    private int initialGearCount;
+    private int initialMedkitCount;
+    private int initialAmmoCount;
+
     public PlayerDeath deathUI;
     public PauseMenu pauseMenu;
     public PlayerHealthBar healthBar;
+    public UIInteractions uiInteractions;
 
     /// <summary>
     /// Keeps any gameobjects under the GameManager object while moving between scenes, destroys repeats
@@ -28,12 +33,11 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            }
-            else if(instance != null && instance != this)
+        }
+        else if(instance != null && instance != this)
         {
             Destroy(gameObject);
-        }
-        
+        } 
     }
 
     /// <summary>
@@ -41,31 +45,14 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        //deathUI = PlayerDeath.playerDeathUI;
-
-        if (teleMesh != null)
-        {
-            teleMesh.SetActive(false);
-            ResetHealthBar();
-        }
+        ResetHealthBar();
     }
 
     public void ResetHealthBar()
     {
         healthBar.SetPlayerMaxHealth(Player.playerMaxHealth);
         healthBar.SetPlayerHealth(Player.playerHealth);
-    }
-
-    /// <summary>
-    /// Function activates teleporter
-    /// </summary>
-    public void ActivateTeleMesh()
-    {
-        if (teleMesh != null)
-        {
-            teleMesh.SetActive (true);
-        }
-    }
+    }  
 
     public void ShowDeathUI()
     {

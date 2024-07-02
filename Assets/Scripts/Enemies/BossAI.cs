@@ -15,6 +15,9 @@ public class BossAI : MonoBehaviour
     /// </summary>
     public float bossHealth = 100f;
 
+    [SerializeField]
+    GameObject teleMesh;
+
     /// <summary>
     /// Variables to determine Boss' combat statistics
     /// </summary>
@@ -56,6 +59,7 @@ public class BossAI : MonoBehaviour
         animator = GetComponent<Animator>();
 
         enemyHealthSlider.SetMaxHealth(bossHealth);
+        teleMesh.SetActive(false);
     }
 
     /// <summary>
@@ -106,6 +110,7 @@ public class BossAI : MonoBehaviour
     {
         Destroy(gameObject);
         DropLoot();
+        teleMesh.SetActive(true);
     }
 
     /// <summary>

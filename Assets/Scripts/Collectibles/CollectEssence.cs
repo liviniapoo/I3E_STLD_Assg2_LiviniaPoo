@@ -19,10 +19,5 @@ public class CollectEssence : Collectible
         base.Collect();
         Player.essenceCollected = true;
         Player.essenceCount = 1;
-        
-        if (GameManager.instance != null)
-        {
-            GameManager.instance.ActivateTeleMesh();
-        }
     }
 }
