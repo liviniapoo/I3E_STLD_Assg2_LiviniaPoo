@@ -31,21 +31,6 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Start called, pause inactive");
     }
 
-    /// <summary>
-    /// Handles signal for pausing the game
-    /// </summary>
-    public void OnEscape()
-    {
-        Debug.Log("Esc pressed");
-        if (isPaused)
-        {
-            ResumeGame();
-        }
-        else if (!isPaused)
-        {
-            PauseGame();
-        }
-    }
 
     /// <summary>
     /// Function to pause game

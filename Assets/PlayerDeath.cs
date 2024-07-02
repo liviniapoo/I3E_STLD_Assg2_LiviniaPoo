@@ -24,6 +24,9 @@ public class PlayerDeath : MonoBehaviour
     public void DeathUI()
     {
         playerDeathUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
     }
 
     /// <summary>
@@ -31,7 +34,12 @@ public class PlayerDeath : MonoBehaviour
     /// </summary>
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+        playerDeathUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        GameManager.instance.ResetHealthBar();
+        Time.timeScale = 1f;
     }
 
     /// <summary>
@@ -40,6 +48,9 @@ public class PlayerDeath : MonoBehaviour
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("StartMenu");
+        playerDeathUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     /// <summary>

@@ -368,7 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 64881235}
   - component: {fileID: 64881234}
-  - component: {fileID: 64881233}
+  - component: {fileID: 64881236}
   m_Layer: 5
   m_Name: EventSystem
   m_TagString: Untagged
@@ -376,26 +376,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &64881233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64881232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &64881234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,6 +406,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2073720792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &64881236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64881232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018,
+    type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &72023282
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,7 +573,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1471283408}
+      - m_Target: {fileID: 2073720795}
         m_TargetAssemblyTypeName: PlayerDeath, Assembly-CSharp
         m_MethodName: ReturnToMenu
         m_Mode: 1
@@ -2278,24 +2299,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 494934849}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &254174817 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7094977340588366727, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1471283386}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &254174819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254174817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3391a6c1bd52a404ba97b9d3f06a1057, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &257660586 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5739938066847766044, guid: 0bb090cf78014dd458ce55f8ecfc6516,
@@ -2922,7 +2925,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1471283407}
+      - m_Target: {fileID: 2073720796}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ReturnToMenu
         m_Mode: 1
@@ -3393,7 +3396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badd9433411b55e4f9eb366bd23ff1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxAudio: {fileID: 0}
+  sfxAudio: {fileID: 8300000, guid: 8292f4e797ecd414cbe05b101344f3ad, type: 3}
 --- !u!1 &399561451
 GameObject:
   m_ObjectHideFlags: 0
@@ -3445,7 +3448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &404399814
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3830,7 +3833,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1471283407}
+      - m_Target: {fileID: 2073720796}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -9465,6 +9468,7 @@ GameObject:
   - component: {fileID: 589580229}
   - component: {fileID: 589580231}
   - component: {fileID: 589580230}
+  - component: {fileID: 589580232}
   m_Layer: 5
   m_Name: Player Death
   m_TagString: Untagged
@@ -9533,6 +9537,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589580228}
   m_CullTransparentMesh: 1
+--- !u!114 &589580232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589580228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fb564a2ba5b564f9f665fe4251b55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDeathUI: {fileID: 589580228}
 --- !u!1 &605759506
 GameObject:
   m_ObjectHideFlags: 0
@@ -9616,7 +9633,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1471283387}
+      - m_Target: {fileID: 2073720791}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: 
         m_Mode: 6
@@ -15780,7 +15797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badd9433411b55e4f9eb366bd23ff1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxAudio: {fileID: 0}
+  sfxAudio: {fileID: 8300000, guid: 8292f4e797ecd414cbe05b101344f3ad, type: 3}
 --- !u!1 &776408636
 GameObject:
   m_ObjectHideFlags: 0
@@ -16393,7 +16410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badd9433411b55e4f9eb366bd23ff1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxAudio: {fileID: 0}
+  sfxAudio: {fileID: 8300000, guid: 8292f4e797ecd414cbe05b101344f3ad, type: 3}
 --- !u!1 &902776207 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5310175431942829273, guid: c4f47c2038259de4b92fa68be24a85f2,
@@ -17112,7 +17129,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1471283407}
+      - m_Target: {fileID: 2073720796}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -17887,7 +17904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badd9433411b55e4f9eb366bd23ff1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxAudio: {fileID: 0}
+  sfxAudio: {fileID: 8300000, guid: 8292f4e797ecd414cbe05b101344f3ad, type: 3}
 --- !u!1001 &1159689868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18227,7 +18244,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1471283408}
+      - m_Target: {fileID: 2073720795}
         m_TargetAssemblyTypeName: PlayerDeath, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -18941,7 +18958,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 766, y: -385}
+  m_AnchoredPosition: {x: 736, y: -423}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1292648906
@@ -19137,7 +19154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badd9433411b55e4f9eb366bd23ff1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxAudio: {fileID: 0}
+  sfxAudio: {fileID: 8300000, guid: 8292f4e797ecd414cbe05b101344f3ad, type: 3}
 --- !u!1 &1306650915
 GameObject:
   m_ObjectHideFlags: 0
@@ -19427,7 +19444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badd9433411b55e4f9eb366bd23ff1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxAudio: {fileID: 0}
+  sfxAudio: {fileID: 8300000, guid: 8292f4e797ecd414cbe05b101344f3ad, type: 3}
 --- !u!1 &1342112596
 GameObject:
   m_ObjectHideFlags: 0
@@ -20308,7 +20325,7 @@ PrefabInstance:
     - target: {fileID: 6556307555316582679, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.09
+      value: 23.22
       objectReference: {fileID: 0}
     - target: {fileID: 6556307555316582679, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
         type: 3}
@@ -20378,10 +20395,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 139714185}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7094977340588366727, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 254174819}
     - targetCorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
         type: 3}
       insertIndex: -1
@@ -20394,18 +20407,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1471283400}
-    - targetCorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1471283407}
-    - targetCorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1471283408}
-    - targetCorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1471283409}
   m_SourcePrefab: {fileID: 100100000, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
 --- !u!1 &1471283387 stripped
 GameObject:
@@ -20431,11 +20432,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 046841df4d3d11148a3fd7b87f6c2051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 100
-  playerMaxHealth: 100
-  isDead: 0
-  healthBar: {fileID: 1921862900}
-  deathUI: {fileID: 0}
   gunOnPlayer: {fileID: 136753608}
   sfxHealAudio: {fileID: 139714186}
   healthRestoredPerHeal: 20
@@ -20486,48 +20482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 99963806}
   interactionDistance: 5
---- !u!114 &1471283407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471283387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a819072000dc2749a9d68bc990522ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 1948591069}
---- !u!114 &1471283408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471283387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43fb564a2ba5b564f9f665fe4251b55b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerDeathUI: {fileID: 589580228}
---- !u!114 &1471283409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471283387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c643549b173e98e429f842c7aaff0212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammoCounter: {fileID: 1292648906}
-  medkitCounter: {fileID: 2069070565}
-  gearCounter: {fileID: 1195477763}
-  essenceCounter: {fileID: 1475658215}
 --- !u!1 &1475658213
 GameObject:
   m_ObjectHideFlags: 0
@@ -26193,7 +26147,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1471283408}
+      - m_Target: {fileID: 2073720795}
         m_TargetAssemblyTypeName: PlayerDeath, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
@@ -27803,7 +27757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badd9433411b55e4f9eb366bd23ff1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxAudio: {fileID: 0}
+  sfxAudio: {fileID: 8300000, guid: 8292f4e797ecd414cbe05b101344f3ad, type: 3}
 --- !u!1 &1790716302
 GameObject:
   m_ObjectHideFlags: 0
@@ -28389,6 +28343,7 @@ GameObject:
   - component: {fileID: 1948591070}
   - component: {fileID: 1948591072}
   - component: {fileID: 1948591071}
+  - component: {fileID: 1948591073}
   m_Layer: 5
   m_Name: Pause Menu
   m_TagString: Untagged
@@ -28458,6 +28413,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948591069}
   m_CullTransparentMesh: 1
+--- !u!114 &1948591073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948591069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a819072000dc2749a9d68bc990522ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1948591069}
 --- !u!1 &1959220160 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5739938066847766044, guid: 0bb090cf78014dd458ce55f8ecfc6516,
@@ -28476,7 +28444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: badd9433411b55e4f9eb366bd23ff1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sfxAudio: {fileID: 0}
+  sfxAudio: {fileID: 8300000, guid: 8292f4e797ecd414cbe05b101344f3ad, type: 3}
 --- !u!1001 &1993724508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28841,7 +28809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 766, y: -443}
+  m_AnchoredPosition: {x: 736, y: -481}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2069070565
@@ -28951,6 +28919,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2073720792}
   - component: {fileID: 2073720793}
+  - component: {fileID: 2073720794}
+  - component: {fileID: 2073720795}
+  - component: {fileID: 2073720796}
+  - component: {fileID: 2073720797}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -28990,6 +28962,95 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teleMesh: {fileID: 0}
+  deathUI: {fileID: 589580232}
+  pauseMenu: {fileID: 2073720796}
+  healthBar: {fileID: 2073720797}
+--- !u!114 &2073720794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073720791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c643549b173e98e429f842c7aaff0212, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoCounter: {fileID: 1292648906}
+  medkitCounter: {fileID: 2069070565}
+  gearCounter: {fileID: 1195477763}
+  essenceCounter: {fileID: 1475658215}
+--- !u!114 &2073720795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073720791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43fb564a2ba5b564f9f665fe4251b55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerDeathUI: {fileID: 589580228}
+--- !u!114 &2073720796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073720791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a819072000dc2749a9d68bc990522ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1948591069}
+--- !u!114 &2073720797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073720791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc345bce6d4caa40a64d69b126be7f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealthSlider: {fileID: 1921862899}
+  playerHealthGradient:
+    serializedVersion: 2
+    key0: {r: 0.8773585, g: 0.0041384934, b: 0.0041384934, a: 1}
+    key1: {r: 1, g: 0.9956935, b: 0.13679248, a: 1}
+    key2: {r: 1, g: 0.9956935, b: 0.13679248, a: 0}
+    key3: {r: 0.23529413, g: 0.8235295, b: 0.21568629, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 21588
+    ctime1: 26214
+    ctime2: 43176
+    ctime3: 65535
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_ColorSpace: -1
+    m_NumColorKeys: 4
+    m_NumAlphaKeys: 2
+  playerHealthFill: {fileID: 1245610350}
 --- !u!1 &2098554757
 GameObject:
   m_ObjectHideFlags: 0

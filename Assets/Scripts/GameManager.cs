@@ -7,6 +7,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -14,6 +15,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public GameObject teleMesh;
+    public PlayerDeath deathUI;
+    public PauseMenu pauseMenu;
+    public PlayerHealthBar healthBar;
 
     /// <summary>
     /// Keeps any gameobjects under the GameManager object while moving between scenes, destroys repeats
@@ -37,10 +41,19 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        //deathUI = PlayerDeath.playerDeathUI;
+
         if (teleMesh != null)
         {
             teleMesh.SetActive(false);
+            ResetHealthBar();
         }
+    }
+
+    public void ResetHealthBar()
+    {
+        healthBar.SetPlayerMaxHealth(Player.playerMaxHealth);
+        healthBar.SetPlayerHealth(Player.playerHealth);
     }
 
     /// <summary>
@@ -52,8 +65,25 @@ public class GameManager : MonoBehaviour
         {
             teleMesh.SetActive (true);
         }
-        {
-            
-        }
+    }
+
+    public void ShowDeathUI()
+    {
+        deathUI.DeathUI();
+    }
+
+    public void ShowPauseUI()
+    {
+        pauseMenu.PauseGame();
+    }
+
+    public void HidePauseUI()
+    {
+        pauseMenu.ResumeGame();
+    }
+
+    private void Update()
+    {
+        healthBar.SetPlayerHealth(Player.playerHealth);
     }
 }

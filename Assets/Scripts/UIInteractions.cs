@@ -31,9 +31,17 @@ public class UIInteractions : MonoBehaviour
         }
         else
         {
-            ammoCounter.text = $"0||{Player.ammoCount}";
+            ammoCounter.text = "";
         }
-        medkitCounter.text = $"Medkits Left: {Player.medkitCount}";
+
+        if (Player.medkitCount >0)
+        {
+            medkitCounter.text = $"Medkits Left: {Player.medkitCount}";
+        }
+        else
+        {
+            medkitCounter.text = "";
+        }
         gearCounter.text = $"Gears Collected: {Player.gearCount}/6";
         essenceCounter.text = $"Crystal Essence Collected: {Player.essenceCount}/1";
 

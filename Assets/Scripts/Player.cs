@@ -15,27 +15,9 @@ public class Player : MonoBehaviour
     /// <summary>
     /// Determines player's starting max health
     /// </summary>
-    [SerializeField]
-    public float playerHealth = 100;
-    public float playerMaxHealth = 100;
-    public bool isDead = false;
-
-    public PlayerHealthBar healthBar;
-    public PlayerDeath deathUI;
-
-    /// <summary>
-    /// Referencing door to Normal Door script
-    /// </summary>
-    private NormalDoor normalDoor;
-
-    /// <summary>
-    /// Function to check door in front of player
-    /// </summary>
-    /// <param name="doorPos"></param>
-    public void DoorUpdate(NormalDoor doorPos)
-    {
-        normalDoor = doorPos;
-    }
+    public static float playerHealth = 100;
+    public static float playerMaxHealth = 100;
+    public static bool isDead = false;
 
     /// <summary>
     /// Variables to check whether player has a gun
@@ -90,7 +72,6 @@ public class Player : MonoBehaviour
             playerHealth += healthRestoredPerHeal;
             medkitCount -= 1;
             Debug.Log(playerHealth);
-            healthBar.SetPlayerHealth(playerHealth);
         }
         else if (medkitCount == 0)
         {
@@ -105,12 +86,10 @@ public class Player : MonoBehaviour
     public void TakeDamage(float damageAmt)
     {
         playerHealth -= damageAmt;
-        healthBar.SetPlayerHealth(playerHealth);
 
         if (playerHealth <= 0 && !isDead)
         {
             isDead = true;
-            deathUI.playerDeathUI.SetActive(true);
             Die();
         }
     }
@@ -120,7 +99,17 @@ public class Player : MonoBehaviour
     /// </summary>
     void Die()
     {
-        Debug.Log("Player died");
+        Destroy(gameObject);
+        GameManager.instance.ShowDeathUI();
+        ResetHealth();
+    }
+
+    /// <summary>
+    /// Resetting the player's health
+    /// </summary>
+    public static void ResetHealth()
+    {
+        playerHealth = playerMaxHealth;
     }
 
     /// <summary>
@@ -129,8 +118,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         gunOnPlayer.SetActive(false);
-        healthBar.SetPlayerMaxHealth(playerMaxHealth);
-        deathUI.playerDeathUI.SetActive(false);
     }
 
     /// <summary>
@@ -141,6 +128,21 @@ public class Player : MonoBehaviour
         if(hasGun)
         {
             gunOnPlayer.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// Handles signal for pausing the game
+    /// </summary>
+    public void OnEscape()
+    {
+        if (PauseMenu.isPaused)
+        {
+            GameManager.instance.HidePauseUI();
+        }
+        else
+        {
+            GameManager.instance.ShowPauseUI();
         }
     }
 }
