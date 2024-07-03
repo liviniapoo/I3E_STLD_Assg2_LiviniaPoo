@@ -30,6 +30,7 @@ public class DialogueTrigger : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Dialogue triggered");
         if (other.CompareTag("Player"))
         {
             TriggerDialogue();

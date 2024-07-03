@@ -22,6 +22,11 @@ public class RepairShip : MonoBehaviour
     /// </summary>
     public int gearsNeeded = 6;
 
+    ///<summary>
+    /// Referencing Audio Clips for Effects
+    /// </summary>
+    public AudioSource sfxRepairAudio;
+
     /// <summary>
     /// Checks materials player has upon trigger
     /// </summary>
@@ -52,5 +57,6 @@ public class RepairShip : MonoBehaviour
     {
         Debug.Log("Ship has been fixed");
         shipFixed = true;
+        sfxRepairAudio.Play();
     }
 }
