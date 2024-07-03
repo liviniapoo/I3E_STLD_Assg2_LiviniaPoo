@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     public PlayerDeath deathUI;
     public PauseMenu pauseMenu;
     public PlayerHealthBar healthBar;
-    public UIInteractions uiInteractions;
 
     /// <summary>
     /// Keeps any gameobjects under the GameManager object while moving between scenes, destroys repeats
