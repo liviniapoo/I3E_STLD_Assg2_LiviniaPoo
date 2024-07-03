@@ -30711,6 +30711,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 69.67
       objectReference: {fileID: 0}
+    - target: {fileID: 1553043456914377242, guid: 46c201dab63143b4696578cff533e8ef,
+        type: 3}
+      propertyPath: MoveSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553043456914377242, guid: 46c201dab63143b4696578cff533e8ef,
+        type: 3}
+      propertyPath: SprintSpeed
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2928512428052146379, guid: 46c201dab63143b4696578cff533e8ef,
         type: 3}
       propertyPath: m_LocalPosition.x
